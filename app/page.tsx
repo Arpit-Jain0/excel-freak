@@ -36,10 +36,7 @@ export default function Page() {
                 width={800}
                 height={400}
                 className="h-auto w-full object-cover"
-                onError={(e) => {
-                  const target = e.target as HTMLImageElement
-                  target.src = "/professional-team-collaboration.jpg"
-                }}
+               
               />
             </div>
           </Reveal>
