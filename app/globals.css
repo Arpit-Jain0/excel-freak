@@ -1,0 +1,185 @@
+/* replace design tokens with the Excel Freak design brief values */
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Base palette from design brief */
+  --background: #217346; /* Excel Green */
+  --foreground: #ffffff; /* White for AA contrast on green */
+
+  --card: #217346; /* match background to avoid white blocks */
+  --card-foreground: #ffffff;
+
+  --popover: #217346;
+  --popover-foreground: #ffffff;
+
+  --primary: #217346;
+  --primary-foreground: #ffffff;
+
+  --secondary: #f97316; /* Orange-400 */
+  --secondary-foreground: #ffffff;
+
+  --muted: #217346; /* remove light gray sections */
+  --muted-foreground: #ffffff;
+
+  --accent: #f59e0b; /* Amber accent for highlights */
+  --accent-foreground: #ffffff;
+
+  --destructive: #ea580c;
+  --destructive-foreground: #ffffff;
+
+  --border: rgba(255, 255, 255, 0.22); /* subtle white borders for separation on green */
+  --input: #217346;
+  --ring: rgba(255, 255, 255, 0.35);
+
+  /* Charts */
+  --chart-1: #217346;
+  --chart-2: #f97316;
+  --chart-3: #4b5563;
+  --chart-4: #ffffff;
+  --chart-5: #f9fafb;
+
+  --radius: 0.5rem;
+
+  /* Sidebar */
+  --sidebar: #ffffff;
+  --sidebar-foreground: #4b5563;
+  --sidebar-primary: #f9fafb;
+  --sidebar-primary-foreground: #4b5563;
+  --sidebar-accent: #f59e0b;
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: #4b5563;
+  --sidebar-ring: rgba(33, 115, 70, 0.45);
+}
+
+.dark {
+  /* keep dark mode within same palette to avoid new colors */
+  --background: #217346; /* Using same green as bg */
+  --foreground: #ffffff;
+
+  --card: #217346;
+  --card-foreground: #ffffff;
+
+  --popover: #217346;
+  --popover-foreground: #ffffff;
+
+  --primary: #217346;
+  --primary-foreground: #ffffff;
+
+  --secondary: #f97316;
+  --secondary-foreground: #ffffff;
+
+  --muted: #217346;
+  --muted-foreground: #ffffff;
+
+  --accent: #f59e0b;
+  --accent-foreground: #ffffff;
+
+  --destructive: #ea580c;
+  --destructive-foreground: #ffffff;
+
+  --border: rgba(255, 255, 255, 0.22); /* subtle white borders for separation on green */
+  --input: #217346;
+  --ring: rgba(255, 255, 255, 0.35);
+
+  --chart-1: #217346;
+  --chart-2: #f97316;
+  --chart-3: #ffffff;
+  --chart-4: #f9fafb;
+  --chart-5: #4b5563;
+
+  --sidebar: #4b5563;
+  --sidebar-foreground: #ffffff;
+  --sidebar-primary: #4b5563;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #f59e0b;
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: #f9fafb;
+  --sidebar-ring: rgba(33, 115, 70, 0.45);
+}
+
+@theme inline {
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Added marquee animation keyframes for MediaMarquee component */
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 15s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Added smooth reveal animation for better UX */
+@keyframes reveal {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-reveal {
+  animation: reveal 0.6s ease-out forwards;
+}
