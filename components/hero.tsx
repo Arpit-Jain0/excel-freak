@@ -6,9 +6,9 @@ import { getImagePath } from "@/lib/utils";
 
 export function MediaMarquee() {
   const media = [
-    getImagePath("1.jpg"),
-    getImagePath("22.jpg"),
-    getImagePath("1.jpg")
+    "1.jpg",
+    "22.jpg",
+    "1.jpg"
   ]
 
   return (
@@ -34,7 +34,7 @@ export function Hero() {
       {/* Background image */}
       <div className="absolute inset-0 -z-10">
        <img
-  src={getImagePath("22.jpg")}
+  src={"22.jpg"}
   alt=""
   className="object-cover w-full rounded-lg shadow-lg"
         />

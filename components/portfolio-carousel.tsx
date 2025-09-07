@@ -3,24 +3,23 @@
   import Image from "next/image"
   import { Reveal } from "./reveal"
   import { SimpleCarousel } from "./simple-carousel"
-  import { getImagePath } from "@/lib/utils";
 
   const portfolioItems = [
     {
       alt: "Poster design mockup",
-      src: getImagePath("/poster-design-mockup-minimal-business.jpg"),
+      src: "/poster-design-mockup-minimal-business.jpg",
     },
     {
       alt: "Business card branding",
-      src: getImagePath("/business-showcase.jpg"),
+      src: "/business-showcase.jpg",
     },
     {
       alt: "Website homepage concept",
-      src: getImagePath("/modern-office-collaboration.png"),
+      src: "/modern-office-collaboration.png",
     },
     {
       alt: "Brand guidelines sample",
-      src: getImagePath("/brand-guidelines-style-guide.jpg"),
+      src: "/brand-guidelines-style-guide.jpg",
     },
   ]
 
