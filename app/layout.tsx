@@ -5,8 +5,7 @@ import './globals.css'
 
 export const metadata: Metadata = {
   title: 'Excel Freak',
-  description: 'Business Solutions Provider',
-    generator: 'v0.app'
+  description: 'Business Solutions Provider'
 }
 
 export default function RootLayout({
@@ -18,6 +17,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`font-sans ${GeistSans.variable} ${GeistMono.variable}`}>
         {children}
+        
       </body>
     </html>
   )

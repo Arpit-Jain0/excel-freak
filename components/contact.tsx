@@ -25,116 +25,40 @@ export function Contact() {
   }
 
   return (
+    
     <section id="contact" className="bg-white">
-      <div className="mx-auto max-w-6xl px-4 py-16 sm:py-20">
-        <Reveal>
-          <h2 className="text-balance text-3xl font-semibold text-neutral-900 sm:text-4xl">Let's Talk</h2>
-          <p className="mt-2 max-w-2xl text-neutral-700">
-            Ready to grow your business? Get in touch and let's discuss how we can help you succeed.
-          </p>
-        </Reveal>
+      <footer className="relative bg-black text-gray-200 px-6 py-8 md:px-20 overflow-hidden">
+  {/* Big background text */}
+  <h2 className="text-[20vw] md:text-[15vw] font-bold leading-none whitespace-nowrap select-none pointer-events-none bg-gradient-to-r from-gray-600 to-transparent bg-clip-text text-transparent">
+  Let's talk
+</h2>
 
-        <div className="mt-8 grid grid-cols-1 gap-8 md:grid-cols-2">
-          <Reveal className="rounded-lg border p-6 bg-card">
-            <form onSubmit={onSubmit} className="space-y-4">
-              <div>
-                <label htmlFor="name" className="sr-only">
-                  Name
-                </label>
-                <Input
-                  id="name"
-                  placeholder="Your Name"
-                  value={form.name}
-                  onChange={(e) => setForm((f) => ({ ...f, name: e.target.value }))}
-                  required
-                />
-              </div>
-              <div>
-                <label htmlFor="email" className="sr-only">
-                  Email
-                </label>
-                <Input
-                  id="email"
-                  type="email"
-                  placeholder="Your Email"
-                  value={form.email}
-                  onChange={(e) => setForm((f) => ({ ...f, email: e.target.value }))}
-                  required
-                />
-              </div>
-              <div>
-                <label htmlFor="message" className="sr-only">
-                  Message
-                </label>
-                <Textarea
-                  id="message"
-                  placeholder="Tell us about your project..."
-                  value={form.message}
-                  onChange={(e) => setForm((f) => ({ ...f, message: e.target.value }))}
-                  required
-                  className="min-h-32"
-                />
-              </div>
-              <Button
-                type="submit"
-                disabled={loading}
-                className="w-full bg-primary text-primary-foreground transition-transform hover:scale-[1.01] hover:bg-primary/90"
-              >
-                {loading ? "Sending..." : "Send Message"}
-              </Button>
-            </form>
-          </Reveal>
 
-          <Reveal delay={100} className="space-y-6">
-            <div className="rounded-lg border p-6 bg-card">
-              <h3 className="text-lg font-semibold text-neutral-900 mb-4">Contact Information</h3>
-              <div className="space-y-4 text-neutral-700">
-                <p className="flex items-center gap-3">
-                  <Mail className="h-5 w-5 text-primary flex-shrink-0" aria-hidden />
-                  <a
-                    href="mailto:excelfreak.solution@gmail.com"
-                    className="text-neutral-900 hover:text-primary transition-colors"
-                  >
-                    excelfreak.solution@gmail.com
-                  </a>
-                </p>
-                <p className="flex items-center gap-3">
-                  <Phone className="h-5 w-5 text-primary flex-shrink-0" aria-hidden />
-                  <a href="tel:+917989268494" className="text-neutral-900 hover:text-primary transition-colors">
-                    +91 79892 68494
-                  </a>
-                </p>
-              </div>
-            </div>
+  {/* Foreground content */}
+  <div className="relative z-10 max-w-6xl mx-auto grid gap-6 md:grid-cols-2 items-start">
+    {/* Contact */}
+    <div>
+      <a
+        href="mailto:excelfreak.solution@gmail.com"
+        className="text-lg md:text-xl text-gray-300 hover:text-white transition"
+      >
+        excelfreak.solution@gmail.com
+      </a>
+    </div>
 
-            <div className="rounded-lg border p-6 bg-card">
-              <h3 className="text-lg font-semibold text-neutral-900 mb-4">Follow Us</h3>
-              <div className="flex gap-4">
-                <a
-                  href="https://www.instagram.com/e.x.c.e.l_f.r.e.a.k/"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="text-neutral-700 hover:text-primary transition-colors"
-                >
-                  Instagram
-                </a>
-                <a
-                  href="https://www.linkedin.com/in/yashjain96/"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="text-neutral-700 hover:text-primary transition-colors"
-                >
-                  LinkedIn
-                </a>
-              </div>
-            </div>
-          </Reveal>
-        </div>
+    {/* Navigation + Socials */}
+    <div className="flex flex-col md:items-end gap-4">
 
-        <div className="mt-12 pt-8 border-t border-neutral-200 text-center">
-          <p className="text-sm text-neutral-500">© {new Date().getFullYear()} Excel Freak. All rights reserved.</p>
-        </div>
+      <div className="flex gap-6 text-base md:text-lg">
+        <a href="https://www.instagram.com/e.x.c.e.l_f.r.e.a.k/" target="_blank" rel="noreferrer" className="hover:text-white transition">Instagram</a>
+        <a href="https://www.linkedin.com/in/yashjain96/" target="_blank" rel="noreferrer" className="hover:text-white transition">LinkedIn</a>
       </div>
+    </div>
+  </div>
+  <div className="mt-12 border-t border-gray-700 pt-6 text-sm text-gray-500 text-center">
+© {new Date().getFullYear()} Excel Freak. All rights reserved.
+</div>
+</footer>
     </section>
   )
 }

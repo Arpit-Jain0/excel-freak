@@ -5,15 +5,16 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
 }
 
-export const getImagePath = (imagePath: string) => {
-  // Remove leading slash if present
-  const cleanPath = imagePath.startsWith('/') ? imagePath.slice(1) : imagePath;
-  
-  // In production (GitHub Pages), add the repo prefix
-  if (process.env.NODE_ENV === 'production') {
-    return `/excel-freak/${cleanPath}`;
+export function getImagePath(imagePath: string): string {
+  // Handle placeholder images
+  if (imagePath.includes("22.jpg")) {
+    return imagePath
   }
-  
-  // In development, use the original path
-  return `/${cleanPath}`;
-};
+
+  // Ensure path starts with / for public directory
+  if (!imagePath.startsWith("/")) {
+    return `/${imagePath}`
+  }
+
+  return imagePath
+}

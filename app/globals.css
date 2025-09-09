@@ -6,98 +6,98 @@
 
 :root {
   /* Base palette from design brief */
-  --background: #217346; /* Excel Green */
-  --foreground: #ffffff; /* White for AA contrast on green */
+  --background: #0a0a0a; /* Dark background to match header */
+  --foreground: #ffffff; /* White text for contrast */
 
-  --card: #217346; /* match background to avoid white blocks */
+  --card: #1a1a1a; /* Dark cards */
   --card-foreground: #ffffff;
 
-  --popover: #217346;
+  --popover: #1a1a1a;
   --popover-foreground: #ffffff;
 
-  --primary: #217346;
-  --primary-foreground: #ffffff;
+  --primary: #eab308; /* Yellow to match header branding */
+  --primary-foreground: #000000;
 
-  --secondary: #f97316; /* Orange-400 */
+  --secondary: #1f1f1f; /* Slightly lighter dark for alternating sections */
   --secondary-foreground: #ffffff;
 
-  --muted: #217346; /* remove light gray sections */
-  --muted-foreground: #ffffff;
+  --muted: #262626; /* Dark muted background */
+  --muted-foreground: #a3a3a3;
 
-  --accent: #f59e0b; /* Amber accent for highlights */
-  --accent-foreground: #ffffff;
+  --accent: #eab308; /* Yellow accent matching header */
+  --accent-foreground: #000000;
 
   --destructive: #ea580c;
   --destructive-foreground: #ffffff;
 
-  --border: rgba(255, 255, 255, 0.22); /* subtle white borders for separation on green */
-  --input: #217346;
-  --ring: rgba(255, 255, 255, 0.35);
+  --border: #404040; /* Dark border */
+  --input: #1a1a1a;
+  --ring: rgba(234, 179, 8, 0.35);
 
   /* Charts */
-  --chart-1: #217346;
+  --chart-1: #eab308;
   --chart-2: #f97316;
-  --chart-3: #4b5563;
-  --chart-4: #ffffff;
-  --chart-5: #f9fafb;
+  --chart-3: #ffffff;
+  --chart-4: #1a1a1a;
+  --chart-5: #404040;
 
-  --radius: 0.5rem;
+  --radius: 0.75rem; /* Slightly larger radius for modern look */
 
   /* Sidebar */
-  --sidebar: #ffffff;
-  --sidebar-foreground: #4b5563;
-  --sidebar-primary: #f9fafb;
-  --sidebar-primary-foreground: #4b5563;
-  --sidebar-accent: #f59e0b;
-  --sidebar-accent-foreground: #ffffff;
-  --sidebar-border: #4b5563;
-  --sidebar-ring: rgba(33, 115, 70, 0.45);
+  --sidebar: #0a0a0a;
+  --sidebar-foreground: #ffffff;
+  --sidebar-primary: #1a1a1a;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #eab308;
+  --sidebar-accent-foreground: #000000;
+  --sidebar-border: #404040;
+  --sidebar-ring: rgba(234, 179, 8, 0.45);
 }
 
 .dark {
   /* keep dark mode within same palette to avoid new colors */
-  --background: #217346; /* Using same green as bg */
+  --background: #0a0a0a;
   --foreground: #ffffff;
 
-  --card: #217346;
+  --card: #1a1a1a;
   --card-foreground: #ffffff;
 
-  --popover: #217346;
+  --popover: #1a1a1a;
   --popover-foreground: #ffffff;
 
-  --primary: #217346;
-  --primary-foreground: #ffffff;
+  --primary: #eab308;
+  --primary-foreground: #000000;
 
-  --secondary: #f97316;
+  --secondary: #1f1f1f;
   --secondary-foreground: #ffffff;
 
-  --muted: #217346;
-  --muted-foreground: #ffffff;
+  --muted: #262626;
+  --muted-foreground: #a3a3a3;
 
-  --accent: #f59e0b;
-  --accent-foreground: #ffffff;
+  --accent: #eab308;
+  --accent-foreground: #000000;
 
   --destructive: #ea580c;
   --destructive-foreground: #ffffff;
 
-  --border: rgba(255, 255, 255, 0.22); /* subtle white borders for separation on green */
-  --input: #217346;
+  --border: #404040; /* Light border for clean separation */
+  --input: #1a1a1a;
   --ring: rgba(255, 255, 255, 0.35);
 
-  --chart-1: #217346;
+  --chart-1: #eab308;
   --chart-2: #f97316;
   --chart-3: #ffffff;
   --chart-4: #f9fafb;
   --chart-5: #4b5563;
 
-  --sidebar: #4b5563;
+  --sidebar: #0a0a0a;
   --sidebar-foreground: #ffffff;
-  --sidebar-primary: #4b5563;
+  --sidebar-primary: #1f1f1f;
   --sidebar-primary-foreground: #ffffff;
-  --sidebar-accent: #f59e0b;
-  --sidebar-accent-foreground: #ffffff;
-  --sidebar-border: #f9fafb;
-  --sidebar-ring: rgba(33, 115, 70, 0.45);
+  --sidebar-accent: #eab308;
+  --sidebar-accent-foreground: #000000;
+  --sidebar-border: #ffffff;
+  --sidebar-ring: rgba(255, 255, 255, 0.45);
 }
 
 @theme inline {
@@ -150,29 +150,25 @@
   }
 }
 
-/* Added marquee animation keyframes for MediaMarquee component */
-@keyframes marquee {
-  0% {
-    transform: translateX(0);
+/* Excel-like spreadsheet background utility */
+.excel-sheet {
+  background-image: none;
+  background-size: initial;
+  background-position: initial;
+}
+
+@media (min-resolution: 2dppx) {
+  /* Slightly larger cells on high-density screens for clarity */
+  .excel-sheet {
+    background-size: 48px 48px;
   }
-  100% {
-    transform: translateX(-50%);
-  }
 }
 
-.animate-marquee {
-  animation: marquee 15s linear infinite;
-}
-
-.animate-marquee:hover {
-  animation-play-state: paused;
-}
-
-/* Added smooth reveal animation for better UX */
-@keyframes reveal {
+/* Modern animation utilities */
+@keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(30px);
   }
   to {
     opacity: 1;
@@ -180,6 +176,125 @@
   }
 }
 
-.animate-reveal {
-  animation: reveal 0.6s ease-out forwards;
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.animate-slide-in-left {
+  animation: slideInLeft 0.8s ease-out forwards;
+}
+
+.animate-slide-in-right {
+  animation: slideInRight 0.8s ease-out forwards;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.5s ease-out forwards;
+}
+
+/* Intersection observer animation classes */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease-out;
+}
+
+.reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: all 0.8s ease-out;
+}
+
+.reveal-left.revealed {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(50px);
+  transition: all 0.8s ease-out;
+}
+
+.reveal-right.revealed {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Gradient overlays for modern sections */
+.gradient-overlay {
+  position: relative;
+}
+
+.gradient-overlay::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(33, 115, 70, 0.05) 0%, rgba(245, 158, 11, 0.05) 100%);
+  pointer-events: none;
+}
+
+/* Modern card hover effects */
+.card-hover {
+  transition: all 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Responsive grid utilities */
+.grid-auto-fit {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+@media (max-width: 768px) {
+  .grid-auto-fit {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
 }

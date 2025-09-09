@@ -3,6 +3,7 @@
   import Image from "next/image"
   import { Reveal } from "./reveal"
   import { SimpleCarousel } from "./simple-carousel"
+  import { getImagePath } from "@/lib/utils";
 
   const portfolioItems = [
     {
