@@ -21,7 +21,7 @@ export function AlternatingSection({
   imageAlt,
   imagePosition = "left",
   features = [],
-  className,
+  className
 }: AlternatingSectionProps) {
   const [isVisible, setIsVisible] = useState(false)
   const ref = useRef<HTMLDivElement>(null)
@@ -45,7 +45,7 @@ export function AlternatingSection({
 
   return (
     <div ref={ref} className={cn("grid lg:grid-cols-2 gap-8 lg:gap-16 items-center", className)}>
-      {/* Content */}
+    {/* Content */}
       <div
         className={cn(
           "space-y-6 transition-all duration-800 delay-200 px-4 sm:px-10",
@@ -73,6 +73,8 @@ export function AlternatingSection({
             ))}
           </ul>
         )}
+
+        
       </div>
 
       {/* Image */}
@@ -88,8 +90,8 @@ export function AlternatingSection({
           <Image
             src={imageSrc || "/22.jpg"}
             alt={imageAlt}
-            width={600}
-            height={400}
+            width={400}
+            height={300}
             className="w-full h-auto object-cover"
             onError={(e) => {
               const target = e.target as HTMLImageElement
@@ -99,6 +101,8 @@ export function AlternatingSection({
           <div className="absolute inset-0 bg-gradient-to-tr from-primary/10 to-transparent" />
         </div>
       </div>
+    
+    
     </div>
   )
 }

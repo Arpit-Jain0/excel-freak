@@ -13,13 +13,13 @@ export function ModernHero() {
   }, [])
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-background via-background to-secondary/20">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,_rgba(33,115,70,0.3)_1px,_transparent_0)] bg-[length:40px_40px]" />
-      </div>
+    <section className="relative h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-background via-background to-secondary/20">
+  {/* Background Pattern */}
+  <div className="absolute inset-0 opacity-5">
+    <div className="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,_rgba(33,115,70,0.3)_1px,_transparent_0)] bg-[length:40px_40px]" />
 
-      <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20">
+    </div>
+      <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 ">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Content */}
           <div className="space-y-8">
@@ -29,12 +29,12 @@ export function ModernHero() {
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8",
               )}
             >
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium mb-6">
+              <div className="inline-flex items-center gap-2 px-4 bg-primary/10 text-primary rounded-full text-sm font-medium mb-6">
                 <div className="w-2 h-2 bg-primary rounded-full animate-pulse" />
                 Business Growth Solutions
               </div>
 
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-balance leading-tight">
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-balance leading-tight">
                 Transform Your
                 <span className="block text-white">Business with</span>
                 <span className="block"> Excel Freak</span>
@@ -71,8 +71,6 @@ export function ModernHero() {
               </Button>
               
             </div>
-
-            {/* Stats */}
                       </div>
 
           {/* Hero Image */}
@@ -88,9 +86,9 @@ export function ModernHero() {
                 <Image
                   src="/logo.png"
                   alt="Excel Freak Business Dashboard"
-                  width={300}
-                  height={200}
-                  className="w-full h-auto"
+                  width={100}
+                  height={150}
+                  className="w-auto h-auto mx-auto"
                  
                 />
               </div>

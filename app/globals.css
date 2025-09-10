@@ -298,3 +298,21 @@
     gap: 1.5rem;
   }
 }
+
+/* Adding sliding animation for service icons */
+@keyframes slideLeftContinuous {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-slide-left-continuous {
+  animation: slideLeftContinuous 30s linear infinite;
+}
+
+.animate-slide-left-continuous:hover {
+  animation-play-state: paused;
+}

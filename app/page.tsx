@@ -5,6 +5,7 @@ import { ModernSection } from "@/components/modern-section"
 import { AlternatingSection } from "@/components/alternating-section"
 import { WhyChooseUs } from "@/components/why-choose-us"
 import { Contact } from "@/components/contact"
+import { SlidingServiceIcons } from "@/components/sliding-service-icons"
 
 export default function Page() {
   return (
@@ -16,23 +17,26 @@ export default function Page() {
       <ModernSection variant="default" animate="fade">
         <AlternatingSection
           title="About Excel Freak"
-          description="We empower small businesses with modern, practical solutions that drive real growth. Our expertise spans business development, Excel-driven financial reporting, and cutting-edge digital design."
-          imageSrc="/team-collaboration-modern.jpg"
-          imageAlt="Excel Freak team collaboration"
+          description="We create customized products that fit our customers' unique needs. From smart QR code designs to modern websites, interactive Financial dashboards, and seamless sales management systems, we deliver solutions that make businesses run smoother."
+          imageSrc="/capture.png"
+          imageAlt="Excel Freak business solutions dashboard"
           imagePosition="left"
           features={[
-            "10+ years of business expertise",
-            "500+ successful projects delivered",
-            "Specialized in small business growth",
-            "End-to-end solution provider",
+            "Wide range of digital solutions",
+            "100% tailored to client requirements",
+            "From design to deployment, all in one place",
+            "Trusted by businesses for innovation and reliability",
           ]}
         />
+        <div className="mt-6">
+    <SlidingServiceIcons />
+  </div>
       </ModernSection>
 
       <ModernServices />
 
       {/* Process Section - Alternating Layout */}
-      <ModernSection variant="alternate" animate="slide-right">
+      {/* <ModernSection variant="alternate" animate="slide-right">
         <AlternatingSection
           title="Our Proven Process"
           description="We follow a systematic approach to ensure your business transformation is smooth, effective, and delivers measurable results from day one."
@@ -46,7 +50,7 @@ export default function Page() {
             "Training & Ongoing Support",
           ]}
         />
-      </ModernSection>
+      </ModernSection> */}
 
       {/* Technology Section - Alternating Layout */}
       <ModernSection variant="default" animate="slide-left">
@@ -66,23 +70,6 @@ export default function Page() {
       </ModernSection>
 
       <WhyChooseUs />
-
-      {/* Results Section - Alternating Layout */}
-      <ModernSection variant="alternate" animate="slide-right">
-        <AlternatingSection
-          title="Proven Results"
-          description="Our clients see real, measurable improvements in their business operations, efficiency, and bottom line within the first 30 days."
-          imageSrc="/business-growth-results.jpg"
-          imageAlt="Business growth and results"
-          imagePosition="right"
-          features={[
-            "Average 40% efficiency improvement",
-            "95% client retention rate",
-            "ROI visible within 30 days",
-            "24/7 ongoing support included",
-          ]}
-        />
-      </ModernSection>
 
       <Contact />
     </main>
