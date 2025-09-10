@@ -48,7 +48,7 @@ export function AlternatingSection({
       {/* Content */}
       <div
         className={cn(
-          "space-y-6 transition-all duration-800 delay-200",
+          "space-y-6 transition-all duration-800 delay-200 px-4 sm:px-10",
           imagePosition === "right" ? "lg:order-1" : "lg:order-2",
           isVisible ? "opacity-100 translate-x-0" : "opacity-0",
           imagePosition === "left" ? "translate-x-8" : "-translate-x-8",

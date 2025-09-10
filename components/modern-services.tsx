@@ -90,14 +90,16 @@ export function ModernServices() {
 
             return (
               <div
-                key={index}
-                ref={(el) => (refs.current[index] = el)}
-                className={cn(
-                  "transition-all duration-700 ease-out",
-                  isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8",
-                )}
-                style={{ transitionDelay: `${index * 100}ms` }}
-              >
+  key={index}
+  ref={(el) => {
+    refs.current[index] = el
+  }}
+  className={cn(
+    "transition-all duration-700 ease-out",
+    isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8",
+  )}
+  style={{ transitionDelay: `${index * 100}ms` }}
+>
                 <Card className="h-full card-hover group border-border shadow-lg bg-card">
                   <CardContent className="p-8">
                     <div className="mb-6">
