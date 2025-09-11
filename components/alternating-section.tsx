@@ -86,7 +86,7 @@ export function AlternatingSection({
           imagePosition === "left" ? "-translate-x-8" : "translate-x-8",
         )}
       >
-        <div className="relative overflow-hidden rounded-2xl shadow-2xl">
+        <div className="relative">
           <Image
             src={imageSrc || "/22.jpg"}
             alt={imageAlt}
@@ -98,7 +98,7 @@ export function AlternatingSection({
               target.src = `/22.jpg?height=400&width=600&text=${encodeURIComponent(imageAlt)}`
             }}
           />
-          <div className="absolute inset-0 bg-gradient-to-tr from-primary/10 to-transparent" />
+          
         </div>
       </div>
     
