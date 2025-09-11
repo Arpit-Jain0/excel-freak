@@ -57,7 +57,7 @@ export default function Page() {
         <AlternatingSection
           title="Cutting-Edge Technology"
           description="We leverage the latest tools and technologies to build solutions that are not just functional today, but scalable for tomorrow's challenges."
-          imageSrc="/technology-dashboard.jpg"
+          imageSrc="/techno.png"
           imageAlt="Advanced technology dashboard"
           imagePosition="left"
           features={[
