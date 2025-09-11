@@ -119,13 +119,7 @@ export function ModernServices() {
                       ))}
                     </ul>
 
-                    <Button
-                      variant="outline"
-                      className="w-full group border-border text-card-foreground hover:bg-primary hover:text-primary-foreground bg-transparent"
-                    >
-                      Learn More
-                      <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                    </Button>
+                   
                   </CardContent>
                 </Card>
               </div>
