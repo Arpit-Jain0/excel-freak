@@ -18,7 +18,7 @@ export default function Page() {
         <AlternatingSection
           title="About Excel Freak"
           description="We create customized products that fit our customers' unique needs. From smart QR code designs to modern websites, interactive Financial dashboards, and seamless sales management systems, we deliver solutions that make businesses run smoother."
-          imageSrc="/Capture.PNG"
+          imageSrc="/capture.png"
           imageAlt="Excel Freak business solutions dashboard"
           imagePosition="left"
           features={[
