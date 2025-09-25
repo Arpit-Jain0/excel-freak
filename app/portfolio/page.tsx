@@ -37,13 +37,13 @@ const portfolioProjects = [
 const salesDashboards = [
   {
     title: "Tractor Sales Dashboard",
-    image: "/sales_dashboard.png",
+    image: "/sales_dashboard.PNG",
     description: "Comprehensive Sales dashboard",
    
   },
   {
     title: "Agent Performance Dashboard",
-    image: "/agent_performance.png",
+    image: "/agent_performance.PNG",
     description: "Dashboard on the Performace of individual agents ",
   },
 ]
