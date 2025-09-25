@@ -1,22 +1,23 @@
 import { Instagram, Facebook, Linkedin } from "lucide-react"
+import Link from "next/link"
 
 const links = [
-  { label: "Home", href: "#" },
-  { label: "Services", href: "#services" },
-  { label: "Portfolio", href: "#portfolio" },
+  { label: "Home", href: "/" },
+  { label: "Services", href: "/services" },
+  { label: "Portfolio", href: "/portfolio" },
   { label: "Contact", href: "#contact" },
 ]
 
 export function SiteFooter() {
   return (
-    <footer className="border-t bg-white">
+    <footer className="border-t bg-card">
       <div className="mx-auto max-w-6xl px-4 py-10">
         <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
           <nav className="flex items-center gap-4">
             {links.map((l) => (
-              <a key={l.href} href={l.href} className="text-sm text-neutral-700 hover:text-blue-600">
+              <Link key={l.href} href={l.href} className="text-sm text-muted-foreground hover:text-primary">
                 {l.label}
-              </a>
+              </Link>
             ))}
           </nav>
           <div className="flex items-center gap-3">
@@ -31,7 +32,7 @@ export function SiteFooter() {
             </a>
           </div>
         </div>
-        <p className="mt-6 text-center text-xs text-neutral-500">© 2025 Excel Freak. All Rights Reserved.</p>
+        <p className="mt-6 text-center text-xs text-muted-foreground">© 2025 Excel Freak. All Rights Reserved.</p>
       </div>
     </footer>
   )

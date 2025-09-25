@@ -1,27 +1,29 @@
 "use client"
 
-import React, { useCallback, useState } from "react"
+import type React from "react"
+import { useCallback, useState } from "react"
 import { Button } from "@/components/ui/button"
-import { Menu, X } from "lucide-react" // Make sure to install Lucide or use other icons
+import { Menu, X } from "lucide-react"
 import Image from "next/image"
+import Link from "next/link"
 
 const navItems = [
-  { label: "About", href: "#about" },
-  { label: "Services", href: "#services" },
-  { label: "Portfolio", href: "#portfolio" },
-  { label: "Why Us", href: "#why-us" },
-  { label: "Testimonials", href: "#testimonials" },
-  { label: "Contact", href: "#contact" },
+  { label: "About", href: "/about" },
+  { label: "Services", href: "/services" },
+  { label: "Portfolio", href: "/portfolio" },
+  { label: "Why Us", href: "/why-us" },
 ]
 
 export function SiteHeader() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   const onNavClick = useCallback((e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    e.preventDefault()
-    const el = document.querySelector(href)
-    if (el) el.scrollIntoView({ behavior: "smooth", block: "start" })
-       setMobileMenuOpen(false)
+    if (href.startsWith("#")) {
+      e.preventDefault()
+      const el = document.querySelector(href)
+      if (el) el.scrollIntoView({ behavior: "smooth", block: "start" })
+    }
+    setMobileMenuOpen(false)
   }, [])
 
   return (
@@ -29,28 +31,39 @@ export function SiteHeader() {
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
         {/* Logo + Brand */}
         <div className="flex items-center gap-2">
+          <Link href = "/">
           <Image src="/logo.png" alt="Logo" width={32} height={32} />
-          <a href="#" className="text-lg font-bold tracking-tight text-yellow-400">
+          </Link>
+          <Link href="/" className="text-lg font-bold tracking-tight text-yellow-400">
             Excel Freak
-          </a>
+          </Link>
         </div>
-        
+
         {/* Desktop Nav */}
         <nav className="hidden items-center gap-6 md:flex">
           {navItems.map((item) => (
-            <a
+            <Link
               key={item.href}
               href={item.href}
               onClick={(e) => onNavClick(e, item.href)}
               className="text-sm font-medium text-white transition-colors hover:text-yellow-400"
             >
               {item.label}
-            </a>
+            </Link>
           ))}
+          <Button
+            onClick={() => {
+              const el = document.querySelector("#contact")
+              if (el) el.scrollIntoView({ behavior: "smooth" })
+            }}
+            className="bg-yellow-500 text-black transition-transform duration-200 hover:scale-105 hover:bg-yellow-400"
+          >
+            Contact Us
+          </Button>
         </nav>
 
         {/* Get Started Button (Desktop only) */}
-        <div className="hidden md:block">
+        {/* <div className="hidden md:block">
           <Button
             onClick={() => {
               const el = document.querySelector("#contact")
@@ -60,7 +73,7 @@ export function SiteHeader() {
           >
             Get Started
           </Button>
-        </div>
+        </div> */}
 
         {/* Mobile Menu Toggle */}
         <div className="md:hidden">
@@ -75,14 +88,14 @@ export function SiteHeader() {
         <div className="md:hidden bg-black/95 backdrop-blur-sm px-4 pb-4 pt-2">
           <nav className="flex flex-col gap-4">
             {navItems.map((item) => (
-              <a
+              <Link
                 key={item.href}
                 href={item.href}
                 onClick={(e) => onNavClick(e, item.href)}
                 className="text-sm font-medium text-white transition-colors hover:text-yellow-400"
               >
                 {item.label}
-              </a>
+              </Link>
             ))}
             <Button
               onClick={() => {

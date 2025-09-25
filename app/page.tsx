@@ -6,6 +6,7 @@ import { AlternatingSection } from "@/components/alternating-section"
 import { WhyChooseUs } from "@/components/why-choose-us"
 import { Contact } from "@/components/contact"
 import { SlidingServiceIcons } from "@/components/sliding-service-icons"
+import { PortfolioPreview } from "@/components/portfolio-preview"
 
 export default function Page() {
   return (
@@ -29,28 +30,13 @@ export default function Page() {
           ]}
         />
         <div className="mt-6">
-    <SlidingServiceIcons />
-  </div>
+          <SlidingServiceIcons />
+        </div>
       </ModernSection>
 
       <ModernServices />
 
-      {/* Process Section - Alternating Layout */}
-      {/* <ModernSection variant="alternate" animate="slide-right">
-        <AlternatingSection
-          title="Our Proven Process"
-          description="We follow a systematic approach to ensure your business transformation is smooth, effective, and delivers measurable results from day one."
-          imageSrc="/business-process-workflow.jpg"
-          imageAlt="Business process workflow"
-          imagePosition="right"
-          features={[
-            "Discovery & Analysis Phase",
-            "Custom Solution Design",
-            "Implementation & Testing",
-            "Training & Ongoing Support",
-          ]}
-        />
-      </ModernSection> */}
+      <PortfolioPreview />
 
       {/* Technology Section - Alternating Layout */}
       <ModernSection variant="default" animate="slide-left">

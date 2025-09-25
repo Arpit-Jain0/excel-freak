@@ -27,22 +27,12 @@ export function SimpleCarousel({
   const prev = () => setIndex((i) => (i - 1 + len) % len)
 
   useEffect(() => {
-    if (!auto || len <= 1) return
-
-    const startTimer = () => {
-      if (timer.current) window.clearInterval(timer.current)
-      timer.current = window.setInterval(next, interval)
-    }
-
-    startTimer()
-
+    if (!auto) return
+    timer.current = window.setInterval(next, interval)
     return () => {
-      if (timer.current) {
-        window.clearInterval(timer.current)
-        timer.current = null
-      }
+      if (timer.current) window.clearInterval(timer.current)
     }
-  }, [auto, interval, len])
+  }, [auto, interval])
 
   const slides = useMemo(
     () =>
@@ -50,8 +40,8 @@ export function SimpleCarousel({
         <div
           key={i}
           className={[
-            "shrink-0 grow-0 basis-full transition-all duration-500 ease-in-out",
-            i === index ? "opacity-100 scale-100" : "opacity-0 scale-95",
+            "shrink-0 grow-0 basis-full transition-opacity duration-500",
+            i === index ? "opacity-100" : "opacity-0",
             itemClassName,
           ].join(" ")}
           aria-hidden={i !== index}
@@ -73,7 +63,7 @@ export function SimpleCarousel({
           variant="secondary"
           size="icon"
           onClick={prev}
-          className="pointer-events-auto bg-white/90 hover:bg-white transition-all duration-200 hover:scale-105"
+          className="pointer-events-auto bg-white/90 hover:bg-white"
           aria-label="Previous slide"
         >
           <ChevronLeft className="h-4 w-4" />
@@ -82,7 +72,7 @@ export function SimpleCarousel({
           variant="secondary"
           size="icon"
           onClick={next}
-          className="pointer-events-auto bg-white/90 hover:bg-white transition-all duration-200 hover:scale-105"
+          className="pointer-events-auto bg-white/90 hover:bg-white"
           aria-label="Next slide"
         >
           <ChevronRight className="h-4 w-4" />
@@ -95,8 +85,8 @@ export function SimpleCarousel({
             aria-label={`Go to slide ${i + 1}`}
             onClick={() => setIndex(i)}
             className={[
-              "h-1.5 w-4 rounded-full transition-all duration-300 ease-in-out",
-              i === index ? "bg-blue-600 scale-110" : "bg-neutral-300 hover:bg-neutral-400 hover:scale-105",
+              "h-1.5 w-4 rounded-full transition-colors",
+              i === index ? "bg-blue-600" : "bg-neutral-300 hover:bg-neutral-400",
             ].join(" ")}
           />
         ))}

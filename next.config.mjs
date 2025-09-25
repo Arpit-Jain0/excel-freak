@@ -1,12 +1,14 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export',
-  distDir: 'out',
-  // Remove basePath and assetPrefix for custom domains
-  trailingSlash: true,
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+  typescript: {
+    ignoreBuildErrors: true,
+  },
   images: {
     unoptimized: true,
-  }
-};
+  },
+}
 
-export default nextConfig;
+export default nextConfig

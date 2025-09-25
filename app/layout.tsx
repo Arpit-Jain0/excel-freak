@@ -5,7 +5,8 @@ import './globals.css'
 
 export const metadata: Metadata = {
   title: 'Excel Freak',
-  description: 'Business Solutions Provider'
+  description: 'Business Solutions Provider',
+    generator: 'v0.app'
 }
 
 export default function RootLayout({
