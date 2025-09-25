@@ -4,6 +4,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button"
 import { CheckCircle, BarChart3, Globe, Database, Smartphone, Zap } from "lucide-react"
 import { Reveal } from "@/components/reveal" // Import Reveal component
+import Link from "next/link"
 
 export const services = [
   {
@@ -104,9 +105,7 @@ export default function ServicesPage() {
                       </li>
                     ))}
                   </ul>
-                  <Button className="w-full mt-6 bg-primary text-primary-foreground hover:bg-primary/90">
-                    Learn More
-                  </Button>
+                  
                 </CardContent>
               </Card>
             </Reveal>
@@ -119,9 +118,11 @@ export default function ServicesPage() {
             Contact us today to discuss your project requirements and discover how we can help transform your business
             with our comprehensive digital solutions.
           </p>
+          <Link href="/contact">
           <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90">
             Contact Us Today
           </Button>
+          </Link>
         </div>
       </div>
 

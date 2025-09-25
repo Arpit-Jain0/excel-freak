@@ -25,7 +25,7 @@ export default function AboutPage() {
         <AlternatingSection
           title="Our Story"
           description="We create customized products that fit our customers' unique needs. From smart QR code designs to modern websites, interactive Financial dashboards, and seamless sales management systems, we deliver solutions that make businesses run smoother."
-          imageSrc="/Capture.PNG"
+          imageSrc="/Capture.png"
           imageAlt="Excel Freak business solutions dashboard"
           imagePosition="left"
           features={[
@@ -45,7 +45,7 @@ export default function AboutPage() {
         <AlternatingSection
           title="Cutting-Edge Technology"
           description="We leverage the latest tools and technologies to build solutions that are not just functional today, but scalable for tomorrow's challenges."
-          imageSrc="/vector.PNG"
+          imageSrc="/vector.png"
           imageAlt="Advanced technology dashboard"
           imagePosition="right"
           features={[

@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button"
 import { ImageModal } from "@/components/image-modal"
 import { ExternalLink, Globe } from "lucide-react"
 import Image from "next/image"
+import Link from "next/link"
 import { Reveal } from "@/components/reveal" // Import Reveal component
 
 const portfolioProjects = [
@@ -36,12 +37,12 @@ const portfolioProjects = [
 const salesDashboards = [
   {
     title: "Tractor Sales Dashboard",
-    image: "/sales_dashboard.PNG",
+    image: "/sales_dashboard.png",
     description: "Comprehensive Sales dashboard",
   },
   {
     title: "Agent Performance Dashboard",
-    image: "/agent_performance.PNG",
+    image: "/agent_performance.png",
     description: "Dashboard on the Performace of individual agents ",
   },
 ]
@@ -193,9 +194,11 @@ export default function PortfolioPage() {
             Let's discuss how we can create a custom solution that meets your specific business needs and drives
             results.
           </p>
+          <Link href="/contact">
           <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90">
             Get Started Today
           </Button>
+          </Link>
         </div>
       </div>
 
