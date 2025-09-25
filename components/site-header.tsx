@@ -18,11 +18,6 @@ export function SiteHeader() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   const onNavClick = useCallback((e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    if (href.startsWith("#")) {
-      e.preventDefault()
-      const el = document.querySelector(href)
-      if (el) el.scrollIntoView({ behavior: "smooth", block: "start" })
-    }
     setMobileMenuOpen(false)
   }, [])
 
@@ -31,8 +26,8 @@ export function SiteHeader() {
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
         {/* Logo + Brand */}
         <div className="flex items-center gap-2">
-          <Link href = "/">
-          <Image src="/logo.png" alt="Logo" width={32} height={32} />
+          <Link href="/">
+            <Image src="/logo.png" alt="Logo" width={32} height={32} />
           </Link>
           <Link href="/" className="text-lg font-bold tracking-tight text-yellow-400">
             Excel Freak
@@ -51,29 +46,12 @@ export function SiteHeader() {
               {item.label}
             </Link>
           ))}
-          <Button
-            onClick={() => {
-              const el = document.querySelector("#contact")
-              if (el) el.scrollIntoView({ behavior: "smooth" })
-            }}
-            className="bg-yellow-500 text-black transition-transform duration-200 hover:scale-105 hover:bg-yellow-400"
-          >
-            Contact Us
-          </Button>
+          <Link href="/contact" passHref>
+            <Button className="bg-yellow-500 text-black transition-transform duration-200 hover:scale-105 hover:bg-yellow-400">
+              Contact Us
+            </Button>
+          </Link>
         </nav>
-
-        {/* Get Started Button (Desktop only) */}
-        {/* <div className="hidden md:block">
-          <Button
-            onClick={() => {
-              const el = document.querySelector("#contact")
-              if (el) el.scrollIntoView({ behavior: "smooth" })
-            }}
-            className="bg-yellow-500 text-black transition-transform duration-200 hover:scale-105 hover:bg-yellow-400"
-          >
-            Get Started
-          </Button>
-        </div> */}
 
         {/* Mobile Menu Toggle */}
         <div className="md:hidden">
@@ -97,16 +75,14 @@ export function SiteHeader() {
                 {item.label}
               </Link>
             ))}
-            <Button
-              onClick={() => {
-                const el = document.querySelector("#contact")
-                if (el) el.scrollIntoView({ behavior: "smooth" })
-                setMobileMenuOpen(false)
-              }}
-              className="mt-2 bg-yellow-500 text-black hover:bg-yellow-400"
-            >
-              Get Started
-            </Button>
+            <Link href="/contact" passHref>
+              <Button
+                onClick={() => setMobileMenuOpen(false)}
+                className="mt-2 bg-yellow-500 text-black hover:bg-yellow-400"
+              >
+                Get Started
+              </Button>
+            </Link>
           </nav>
         </div>
       )}

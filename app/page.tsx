@@ -7,12 +7,17 @@ import { WhyChooseUs } from "@/components/why-choose-us"
 import { Contact } from "@/components/contact"
 import { SlidingServiceIcons } from "@/components/sliding-service-icons"
 import { PortfolioPreview } from "@/components/portfolio-preview"
+import { Reveal } from "@/components/reveal" // Import Reveal component
 
 export default function Page() {
   return (
     <main className="overflow-hidden">
       <SiteHeader />
-      <ModernHero />
+      <Reveal delay={0}>
+        {" "}
+        {/* Wrapped ModernHero with Reveal */}
+        <ModernHero />
+      </Reveal>
 
       {/* About Section - Alternating Layout */}
       <ModernSection variant="default" animate="fade">
@@ -30,13 +35,25 @@ export default function Page() {
           ]}
         />
         <div className="mt-6">
-          <SlidingServiceIcons />
+          <Reveal delay={100}>
+            {" "}
+            {/* Wrapped SlidingServiceIcons with Reveal */}
+            <SlidingServiceIcons />
+          </Reveal>
         </div>
       </ModernSection>
 
-      <ModernServices />
+      <Reveal delay={200}>
+        {" "}
+        {/* Wrapped ModernServices with Reveal */}
+        <ModernServices />
+      </Reveal>
 
-      <PortfolioPreview />
+      <Reveal delay={300}>
+        {" "}
+        {/* Wrapped PortfolioPreview with Reveal */}
+        <PortfolioPreview />
+      </Reveal>
 
       {/* Technology Section - Alternating Layout */}
       <ModernSection variant="default" animate="slide-left">
@@ -55,9 +72,17 @@ export default function Page() {
         />
       </ModernSection>
 
-      <WhyChooseUs />
+      <Reveal delay={400}>
+        {" "}
+        {/* Wrapped WhyChooseUs with Reveal */}
+        <WhyChooseUs />
+      </Reveal>
 
-      <Contact />
+      <Reveal delay={500}>
+        {" "}
+        {/* Wrapped Contact with Reveal */}
+        <Contact />
+      </Reveal>
     </main>
   )
 }
