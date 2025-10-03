@@ -1,4 +1,4 @@
-import { Instagram, Facebook, Linkedin } from "lucide-react"
+import { Instagram, Facebook, Linkedin, MessageCircle } from "lucide-react"
 import Link from "next/link"
 
 const links = [
@@ -21,14 +21,11 @@ export function SiteFooter() {
             ))}
           </nav>
           <div className="flex items-center gap-3">
-            <a aria-label="LinkedIn" href="#" className="text-foreground hover:text-primary">
-              <Linkedin className="h-5 w-5" />
+            <a aria-label="MessageCircle" href="https://wa.me/917989268494" className="text-foreground hover:text-primary">
+              <MessageCircle className="h-5 w-5" />
             </a>
-            <a aria-label="Instagram" href="#" className="text-foreground hover:text-primary">
+            <a aria-label="Instagram" href="https://www.instagram.com/e.x.c.e.l_f.r.e.a.k/" className="text-foreground hover:text-primary">
               <Instagram className="h-5 w-5" />
-            </a>
-            <a aria-label="Facebook" href="#" className="text-foreground hover:text-primary">
-              <Facebook className="h-5 w-5" />
             </a>
           </div>
         </div>
