@@ -32,6 +32,16 @@ const portfolioProjects = [
     url: "https://www.jainpandithyderabad.in",
     icon: <Globe className="h-5 w-5" />,
   },
+  {
+    id: 3,
+    title: "Atlas GreenTrade",
+    description: "Recycling and chemical trading industry",
+    image: "/logo 2.png",
+    category: "Website",
+    technologies: [],
+    url:"https://www.atlasgreen.eu",
+    icon: <Globe className="h-5 w-5" />,
+  },
 ]
 
 const salesDashboards = [

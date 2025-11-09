@@ -19,6 +19,12 @@ const featuredProjects = [
     image: "/tirthankar-statue.png",
     url: "https://www.jainpandithyderabad.in",
   },
+  {
+    title: "Atlas GreenTrade",
+    description: "Recycling and chemical trading industry",
+    image: "/logo 2.png",
+    url: "https://www.atlasgreen.eu",
+  },
   
 ]
 
